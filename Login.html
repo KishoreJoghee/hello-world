@@ -1,0 +1,130 @@
+<?php 
+session_start();
+$_SESSION['logged_in']=true;
+?>
+<html id="h1">
+    <head>
+        <title>Login</title>
+		<style>
+			#h1 {background-color:rgba(86,119,220,0.3);}
+			::placeholder {
+			color: white;
+			opacity: 1; 
+			}
+			:-ms-input-placeholder { 
+			color: white;
+			}
+			::-ms-input-placeholder { 
+			color: white;
+			}
+			
+			#one {
+				border-radius: 10px;
+				width: 400px;
+				height:40px; 
+				background-color: #2b55d4;
+				color: #ffffff;
+			}
+			#two {
+				border-radius: 10px;
+				width: 400px;
+				height:40px; 
+				background-color: #2b55d4;
+				color: #ffffff;
+			}
+			#three {
+				border-radius: 10px;
+				background-color: #2b55d4;
+				padding: 8px; 
+				width: 200px;
+				height: 40px;  				
+				color: #ffffff;
+			}
+			#four {
+				border-radius: 10px;
+				background-color: #2b55d4;
+				padding: 8px; 
+				width: 200px;
+				height: 40px;  				
+				color: #ffffff; 
+			}
+			.alignleft {
+			float: left;
+			}
+			.alignright {
+			float: right;
+			}
+		</style>
+    </head>
+    <body>
+		<font face = "Calibri">
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<div id="textbox" style="clear: both;">
+		<img src="download.jpeg" alt="alrajhi" width="300" height="100" class="alignleft"></img>
+		<img src="download1.jpeg" alt="maveric" width="350" height="100" class="alignright"></img>
+		</div>
+        <form name="login">
+            <table align="center" cellspacing="15" cellpadding="5">
+			<th><h2>T24 KNOWLEDGE HUB</h2></th>
+				<tr>
+					<td>
+						<input  id ="one" type="text" name="userid" placeholder="Username"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input id ="two" type="password" name="pswrd" placeholder="Password"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input id ="three" type="button" onclick="display(this.form)" value="Let me in"/>
+						<input id ="four" type="reset" value="Reset"/>
+					</td>
+				</tr>
+			</table>
+		<marquee behavior="scroll" direction="left" scrollamount="11"> <h3 align="center">The T24 Knowledge Hub is a library of FAQs, Known Issues & Resolution and Process Documents</h3></marquee>
+        </form>
+		<script type="text/javascript">
+		function preventpage()
+		{
+			window.history.forward();
+		}
+		setTimeout("preventpage()",0);
+		window.onunload = function() {null};
+		</script>
+		
+		<script>
+		var input = document.getElementById("two");
+		input.addEventListener("keyup", function(event) {
+		if (event.keyCode === 13) {
+		event.preventDefault();
+		document.getElementById("three").click();
+		}
+		});
+		</script>
+		
+		<script type="text/javascript">
+        function display(form){
+		if (form.userid.value=="admin") { 
+		if (form.pswrd.value=="admin") {              
+										location="Home.php" 
+											} else {
+													alert("Please enter the valid Password")
+													}
+								} else {  alert("Please enter the valid Username")
+										}
+						}
+		</script>
+		
+		<script language=JavaScript>
+			var message = "Entering into Confidential data not allowed !!!";
+			function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+			if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+			document.onmousedown = rtclickcheck;
+	</script>
+		</font><br />
+    </body>
+</html>
